@@ -1,47 +1,48 @@
-<%= form_with(model: track) do |form| %>
-  <% if track.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(track.errors.count, "error") %> prohibited this track from being saved:</h2>
 
-      <ul>
-        <% track.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+  <%= form_with(model: track) do |form| %>
+    <% if track.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(track.errors.count, "error") %> prohibited this track from being saved:</h2>
+
+        <ul>
+          <% track.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form.label :title, style: "display: block" %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div>
+      <%= form.label :artist, style: "display: block" %>
+      <%= form.text_field :artist %>
+    </div>
+
+    <div>
+      <%= form.label :artwork, style: "display: block" %>
+      <%= form.text_area :artwork %>
+    </div>
+
+    <div>
+      <%= form.label :genre, style: "display: block" %>
+      <%= form.text_field :genre %>
+    </div>
+
+    <div>
+      <%= form.label :release_date, style: "display: block" %>
+      <%= form.date_field :release_date %>
+    </div>
+
+    <div>
+      <%= form.label :link, style: "display: block" %>
+      <%= form.text_area :link %>
+    </div>
+
+    <div>
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :artist, style: "display: block" %>
-    <%= form.text_field :artist %>
-  </div>
-
-  <div>
-    <%= form.label :artwork, style: "display: block" %>
-    <%= form.text_area :artwork %>
-  </div>
-
-  <div>
-    <%= form.label :genre, style: "display: block" %>
-    <%= form.text_field :genre %>
-  </div>
-
-  <div>
-    <%= form.label :release_date, style: "display: block" %>
-    <%= form.date_field :release_date %>
-  </div>
-
-  <div>
-    <%= form.label :link, style: "display: block" %>
-    <%= form.text_area :link %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
